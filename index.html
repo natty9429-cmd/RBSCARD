@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>นามบัตรดิจิทัล</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.card-container {
+  perspective: 1000px; /* ให้มิติ 3D เวลาพลิก */
+}
+
+.card {
+  width: 400px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: rotateY(180deg); /* พลิกนามบัตรเวลา hover */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden; /* ซ่อนด้านหลังเมื่อพลิก */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back {
+  transform: rotateY(180deg); /* ด้านหลังกลับด้าน */
+}
+</style>
+</head>
+<body>
+<div class="card-container">
+  <div class="card">
+    <img src="front.jpg" alt="หน้า" class="front">
+    <img src="back.jpg" alt="หลัง" class="back">
+  </div>
+</div>
+</body>
+</html>
